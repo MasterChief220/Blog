@@ -1,5 +1,5 @@
-title: Hacker Plus
-author: CaptainIRS
+title: Cybersecurity Blog
+author: BassamKhan
 description: The Hacker Plus Theme
 google_analytics:
 google_site_verification_content: 
@@ -7,17 +7,17 @@ disqus_forum_shortname: captainirs-github-io
 
 #Usernames and badges
 htb_badge_no:
-thm_badge_no:
-show_thm_htb_badges_in_nav: false
-github_username: CaptainIRS
+thm_badge_no: 1442295
+show_thm_htb_badges_in_nav: true
+github_username: MasterChief220
 gitlab:
-medium:
+medium: https://medium.com/@bassam-khan
 stackoverflow:
 hacker_news:
 linkedin: rinish-sam
 twitch:
 youtube:
-twitter: CaptainIRS
+twitter: 
 facebook:
 instagram:
 reddit:

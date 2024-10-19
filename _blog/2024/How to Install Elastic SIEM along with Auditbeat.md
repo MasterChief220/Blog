@@ -66,7 +66,11 @@ sudo vi /etc/elasticsearch/elasticsearch.yml
 ```
 I am using Vim but you can use Nano or any other editor you feel comfortable with. Scroll down to the config file until you see the Network Section where you should change the network.host Ip address to your IP address. My ip right now is 192.168.240.128 but you should change it to your machine ip. Also, comment in the line. 
 
-![Image4](\assets\images\blogs\2024\1_9keDiriw9qbC_yqMUzPcsQ.png) 
+{% if jekyll.environment == "production" %}
+![Image4](https://raw.githubusercontent.com/MasterChief220/Blog/master/assets/images/blogs/2024/1_9keDiriw9qbC_yqMUzPcsQ.png)
+{% else %}
+![Image4]({{ site.baseurl }}/assets/images/blogs/2024/1_9keDiriw9qbC_yqMUzPcsQ.png)
+{% endif %}
 
 It should look like the above.
 Now scroll further down until you see the discovery section and remove hosts 1 and 2 and instead enter your MACHINE IP : 

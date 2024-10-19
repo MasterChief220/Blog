@@ -43,6 +43,7 @@ layout: default
 </script>
 
 <div class="list-group">
+    <!-- Loop through site.writeups -->
     {% for post in site.writeups %}
     <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
         class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
@@ -56,6 +57,7 @@ layout: default
     </a>
     {% endfor %}
 
+    <!-- Loop through site.solutions -->
     {% for post in site.solutions %}
     <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
         class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
@@ -67,5 +69,19 @@ layout: default
         <p class="mb-0">{{ post.excerpt }}</p>
         <small class="text-muted">{{ post.tags | join: ', ' }}</small>
     </a>
+    {% endfor %}
+
+    <!-- Loop through site.blog -->
+    {% for post in site.blog %}
+    <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
+        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
+        <div class="d-flex w-100 justify-content-between">
+            <h6 class="mb-1">{{ post.category }}</h6>
+            <small class="text-muted">{{ post.date | date: '%d %B %Y' }}</small>
+        </div>
+        <h2 class="mb-1">{{ post.title }}</h2>
+        <p class="mb-0">{{ post.content | strip_html | truncatewords: 20 }}</p>
+        <small class="text-muted">{{ post.tags | join: ', ' }}</small>
+    </a> 
     {% endfor %}
 </div>

@@ -3,7 +3,7 @@ author: BassamKhan
 description: The Hacker Plus Theme
 google_analytics:
 google_site_verification_content: 
-disqus_forum_shortname: captainirs-github-io
+disqus_forum_shortname: 
 
 #Usernames and badges
 htb_badge_no:
@@ -14,7 +14,7 @@ gitlab:
 medium: https://medium.com/@bassam-khan
 stackoverflow:
 hacker_news:
-linkedin: rinish-sam
+linkedin: mbassamkhan
 twitch:
 youtube:
 twitter: 

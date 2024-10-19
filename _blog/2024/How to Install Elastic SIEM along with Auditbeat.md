@@ -43,15 +43,16 @@ sudo apt-get update && sudo apt-get install elasticsearch
 ```
 
 which will update the package list and further on also install Elasticsearch.  
-![Image1](\assets\images\blogs\2024\1_eA42er5ix7bS3wcbGwVSUg.png)  
+![Image1]({{ site.baseurl }}/assets/images/blogs/2024/1_eA42er5ix7bS3wcbGwVSUg.png) 
 
 We need to now make some changes to the config file. Before you do that however we need to first ensure some things. If you’re running the Linux system on a virtual machine like Oracle VirtualBox or VMWare Workstation you need to ensure that your host system and the VM can communicate with each other i.e. their IPs are visible to each other. To do this you need to run `ip addr` command in the terminal.
 
-![Image2](\assets\images\blogs\2024\1_t5DMA8yllFHbGeVslMRnFw.png) 
+![Image2]({{ site.baseurl }}/assets/images/blogs/2024/1_t5DMA8yllFHbGeVslMRnFw.png) 
 
 Now as you can see the IP address of my machine is 192.168.240.128. I need to make sure my Windows machine can communicate with it. For that, we will open up the terminal on Windows and run the following command. ping 192.168.240.128. If the ping succeeds then we can go on. If it does not then you need to go into your virtual machine settings and change the network settings from NAT to Bridged Adapter. For Virtualbox the settings are here: 
 
-![Image3](\assets\images\blogs\2024\1_SkWg-WwK7Hdxn5uHWMWx0w.png)
+![Image3]({{ site.baseurl }}/assets/images/blogs/2024/1_SkWg-WwK7Hdxn5uHWMWx0w.png)
+
 
 Now we will open the config file and make some changes. To do that run the following command:
 
@@ -65,11 +66,13 @@ I am using Vim but you can use Nano or any other editor you feel comfortable wit
 It should look like the above.
 Now scroll further down until you see the discovery section and remove hosts 1 and 2 and instead enter your MACHINE IP : 
 
-![Image4](\assets\images\blogs\2024\1_OfY7wDpzX-I50aXVB92Bzw.png)
+![Image4]({{ site.baseurl }}/assets/images/blogs/2024/1_9keDiriw9qbC_yqMUzPcsQ.png)
+
 
 We will now scroll down further until we come across Security Auto Configuration and set it all to false. 
 
-![Image5](\assets\images\blogs\2024\1_uv9QM-lp-RKKSXY3vgC5wA.png) 
+![Image5]({{ site.baseurl }}/assets/images/blogs/2024/1_uv9QM-lp-RKKSXY3vgC5wA.png)
+
 
 Now we will save the file and start elasticsearch. 
 
@@ -88,7 +91,7 @@ Now by default, Elasticsearch runs on the loopback address and port 9200. Hence 
 curl 127.0.0.1:9200
 ```
 
-![Image6](/assets/images/blogs/2024/1_yO6fv1i5grkXnS8g-folwA.png)
+![Image6]({{ site.baseurl }}/assets/images/blogs/2024/1_yO6fv1i5grkXnS8g-folwA.png)
 
 Now once we get an output that looks like the above we can rest easy knowing that Elasticsearch is working. To test whether we can access it from our Windows machine run curl 192.168.240.128:9200 on the Windows terminal. We will see a similar output to the one above if it is installed properly. 
 
@@ -149,7 +152,8 @@ sudo auditbeat -e setup
 
 Most of the output is of not any use to us but 2 lines in particular need to be paid attention to.
 
-![Image7](\assets\images\blogs\2024\1_OEUdc-r90XcpjKuUpOQ3ew.png)
+![Image7]({{ site.baseurl }}/assets/images/blogs/2024/1_OEUdc-r90XcpjKuUpOQ3ew.png)
+
 
 > If for some reason you do not see these highlighted lines then there was some issue and you need to fix it.
 
@@ -163,14 +167,16 @@ To ensure that everything is working perfectly we will go to the dashboard which
 
 Entering the address in the browser yields the following:
 
-![Image8](\assets\images\blogs\2024\1_ZMSDNLP634Aovct_L7wBGQ.png)
+![Image8]({{ site.baseurl }}/assets/images/blogs/2024/1_ZMSDNLP634Aovct_L7wBGQ.png)
+
 
 **Since SSL and security options are not configured there will be no HTTPS address but a http address instead.**
 
 However, to check if Auditbeat is sending logs we will open the left menu by clicking on the horizontal lines and then go to the discover section within Analytics.
 If everything is working and sending logs we should see something like the following:
 
-![Image9](\assets\images\blogs\2024\1_Z3WVxRPiG7zpFPIblO5tuQ.png)
+![Image9]({{ site.baseurl }}/assets/images/blogs/2024/1_Z3WVxRPiG7zpFPIblO5tuQ.png)
+
 
 
 **The SIEM has been set up. Further tutorials will explore the Dashboard in more detail and also how to send logs from the Windows Machine to the SIEM Tool using Winlogbeat and Sysmon. Feel free to ask any questions.** 

@@ -44,4 +44,4 @@ sudo apt-get update && sudo apt-get install elasticsearch
 
 which will update the package list and further on also install Elasticsearch.  
 
-![Image](https://github.com/MasterChief220/Blog/blob/master/assets/images/1_eA42er5ix7bS3wcbGwVSUg.webp) 
+![Image](https://github.com/MasterChief220/Blog/blob/master/assets/images/1_eA42er5ix7bS3wcbGwVSUg.png) 

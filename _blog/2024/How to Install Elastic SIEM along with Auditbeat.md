@@ -42,8 +42,13 @@ Now we will run,
 sudo apt-get update && sudo apt-get install elasticsearch
 ```
 
-which will update the package list and further on also install Elasticsearch.  
-![Image1]({{ site.baseurl }}/assets/images/blogs/2024/1_eA42er5ix7bS3wcbGwVSUg.png) 
+which will update the package list and further on also install Elasticsearch.   
+
+{% if jekyll.environment == "production" %}
+![Image1](https://raw.githubusercontent.com/MasterChief220/Blog/master/assets/images/blogs/2024/1_eA42er5ix7bS3wcbGwVSUg.png)
+{% else %}
+![Image1]({{ site.baseurl }}/assets/images/blogs/2024/1_eA42er5ix7bS3wcbGwVSUg.png)
+{% endif %}
 
 We need to now make some changes to the config file. Before you do that however we need to first ensure some things. If you’re running the Linux system on a virtual machine like Oracle VirtualBox or VMWare Workstation you need to ensure that your host system and the VM can communicate with each other i.e. their IPs are visible to each other. To do this you need to run `ip addr` command in the terminal.
 
